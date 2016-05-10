@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Sikolin</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Username</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registered! Login here.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="hint_seller">Seller</string>
+    <string name="hint_buyer">Buyer</string>
+    <string name="action_logout">Logout</string>
+    <string name="content_menu">Menu</string>
+    <string name="action_get_menu">GetMenu</string>
+</resources>
