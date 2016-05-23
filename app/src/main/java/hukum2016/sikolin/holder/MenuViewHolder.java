@@ -1,6 +1,7 @@
 package hukum2016.sikolin.holder;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     private Context mContext;
     public TextView nama,harga;
     public ImageView foto;
+    public CardView cardView;
     public MenuViewHolder(Context context,View itemView) {
         super(itemView);
         mContext = context;
@@ -23,10 +25,15 @@ public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         foto = (ImageView) itemView.findViewById(R.id.menu_photo);
         nama = (TextView) itemView.findViewById(R.id.menu_name);
         harga = (TextView) itemView.findViewById(R.id.menu_price);
+        cardView = (CardView) itemView.findViewById(R.id.card_view);
     }
 
     @Override
     public void onClick(View v) {
         Toast.makeText(v.getContext(), "MenuKantin" + nama.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    public Context getmContext() {
+        return mContext;
     }
 }

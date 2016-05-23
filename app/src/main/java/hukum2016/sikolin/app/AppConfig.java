@@ -13,4 +13,7 @@ public class AppConfig {
     public static String URL_REGISTER = URL_ROOT + "reg.jsp";
 
     public static String URL_GET_MENU = URL_ROOT + "listmenu.jsp";
+
+    public static String URL_SUBMIT_ORDER = URL_ROOT + "requestmenu.jsp";
+
 }

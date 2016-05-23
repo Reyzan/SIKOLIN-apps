@@ -1,8 +1,10 @@
 package hukum2016.sikolin.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hukum2016.sikolin.R;
+import hukum2016.sikolin.activity.AddToCart;
 import hukum2016.sikolin.helper.MenuKantin;
 import hukum2016.sikolin.holder.MenuViewHolder;
 
@@ -27,16 +30,25 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder>{
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.menu_list, parent, false);
         MenuViewHolder mvh = new MenuViewHolder(parent.getContext(),itemView);
-        Log.d("masuk","menuviewholder");
         return mvh;
     }
 
     @Override
-    public void onBindViewHolder(MenuViewHolder holder, int position) {
-        Log.d("masuk","bind");
-        holder.foto.setImageBitmap(menuKantinList.get(position).getImage());
-        holder.nama.setText(menuKantinList.get(position).getNama_menu());
-        holder.harga.setText(menuKantinList.get(position).getHarga_menu());
+    public void onBindViewHolder(final MenuViewHolder holder, int position) {
+        final MenuKantin listMenu = menuKantinList.get(position);
+        holder.foto.setImageBitmap(listMenu.getImage());
+        holder.nama.setText(listMenu.getNama_menu());
+        holder.harga.setText(listMenu.getHarga_menu()+"");
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.getmContext(), AddToCart.class);
+                intent.putExtra("nama", listMenu.getNama_menu());
+                intent.putExtra("harga", listMenu.getHarga_menu());
+                intent.putExtra("id_menu",listMenu.getId_menu());
+                holder.getmContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
